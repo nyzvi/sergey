@@ -1,29 +1,38 @@
-#include<iostream>
+#include <iostream>
+#include <random>
 
-using namespace std;
-long long typedef ll;
+void interes_sort(int *arr,int &n);
+void gen_massiv(int *arr,int &n);
+
 int main(){
     int n;
-    n=50;
-    ll a[50] = {12,-1  ,1 ,99 ,7 ,89 ,12 ,78 ,12 ,67 ,23 ,56 ,23 ,56 ,23 ,56 ,25 ,34 ,34 ,34, 34 ,34, 34 ,34 ,34 ,1000000000000000000,45 ,45 ,45 ,45 ,45 ,56 ,78 ,88 ,88 ,99 ,99 ,12 ,12 ,12 ,12 ,34 ,34 ,34 ,34 ,34 ,34 ,12 ,33 ,33};
-     for (int i=0;i<n;i++){
-        cout << a[i] << " ";
-    }
-    cout << endl;
-    int v;
-    
-    cin >> v;
-    for (int i = 0; i < n - 1; i++) {
-        if (i % 2 == 0 && a[i] >= a[i + 1])
-            swap(a[i], a[i + 1]);
- 
-        if (i % 2 != 0 && a[i] <= a[i + 1])
-            swap(a[i], a[i + 1]);
-    }
-    
+    std::cout << "Введите длину массива\n";
+    std::cin >> n;
+    int arr[n];
+    gen_massiv(arr,n);
     for (int i=0;i<n;i++){
-        cout << a[i] << " ";
+        std::cout << arr[i] << " ";
+    }
+    std::cout << "\n";
+    interes_sort(arr,n);
+    for (int i=0;i<n;i++){
+        std::cout << arr[i] << " ";
     }
     return 0;
 }
 
+void interes_sort(int *arr,int &n){
+    for (int i = 0; i < n - 1; i++) {
+        if (i % 2 == 0 && arr[i] >= arr[i + 1])
+            std::swap(arr[i], arr[i + 1]);
+ 
+        if (i % 2 != 0 && arr[i] <= arr[i + 1])
+            std::swap(arr[i], arr[i + 1]);
+    }
+}
+
+void gen_massiv(int *arr,int &n){
+    for(int i=0;i<n;i++){
+        arr[i]=random() % 20;
+    }
+}
