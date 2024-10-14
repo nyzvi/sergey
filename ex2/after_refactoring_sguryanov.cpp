@@ -17,8 +17,7 @@ int main()
     }
     std::cout << std::endl;
 
-    float sum1 = average_value(arr,arr_size);
-    std::cout << "Среднее первой последовательности : " << sum1 << std::endl;
+    std::cout << "Среднее первой последовательности : " << average_value(arr,arr_size) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Вторая последовательность :" << std::endl;
@@ -28,8 +27,7 @@ int main()
     }
     std::cout << std::endl;
 
-    float sum2 = average_value(arr,arr_size);
-    std::cout << "Среднее второй последовательности : " << sum2 << std::endl;
+    std::cout << "Среднее второй последовательности : " << average_value(arr,arr_size) << std::endl;
     std::cout << std::endl;
 
     std::cout << "Третья последовательность :" << std::endl;
@@ -39,8 +37,7 @@ int main()
     }
     std::cout << std::endl;
 
-    float sum3 = average_value(arr,arr_size);
-    std::cout << "Среднее третьей последовательности : " << sum3 << std::endl;
+    std::cout << "Среднее третьей последовательности : " << average_value(arr,arr_size) << std::endl;
     
 }
 
