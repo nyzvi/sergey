@@ -1,13 +1,13 @@
 #include <cmath>
 #include <iostream>
 
-float average_value (int *arr, int &arr_size);
-void generate_and_print_array (int *arr, int &arr_size);
+float average_value (int *arr, int arr_size);
+void generate_and_print_array (int *arr, int arr_size);
 
 
 int main()
 {   
-    int arr_size = 10;
+    const int arr_size = 10;
     int arr[arr_size];
     
     std::cout << "Первая последовательность :" << std::endl;
@@ -29,7 +29,7 @@ int main()
     
 }
 
-float average_value (int *arr, int &arr_size){
+float average_value (int *arr, int arr_size){
     float sum = 0;
     for(int i = 0; i < arr_size; i++) {
         sum += arr[i];
@@ -37,7 +37,7 @@ float average_value (int *arr, int &arr_size){
     return sum/arr_size;
 }
 
-void generate_and_print_array (int *arr, int &arr_size) {
+void generate_and_print_array (int *arr, int arr_size) {
     const char format = ' ';
     for(int i = 0; i < arr_size; i++) {
         arr[i] = random() % 20;
