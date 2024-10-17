@@ -1,9 +1,9 @@
 #include <cmath>
 #include <iostream>
 
-float average_value (int *arr,const int &arr_size);
-void generate_array (int *arr,const int &arr_size);
-void print_array (int *arr,const int &arr_size);
+float calculate_average (const int * const arr,const int arr_size);
+void generate_array (int* const arr, const int arr_size);
+void print_array (const int * const arr, const int arr_size);
 
 
 int main()
@@ -12,19 +12,22 @@ int main()
     std::cin >> count_request;
     std::cout << std::endl;
 
-    const int arr_size = 10;
-    int arr[arr_size];
+
     
     for (int i = 1; i <= count_request; i++){
-        std::cout << "Последовательность №"<< i << std::endl;
+        const int arr_size = 10;
+        int arr[arr_size];
         generate_array(arr,arr_size);
+
+        std::cout << "Последовательность №"<< i << std::endl;
         print_array(arr,arr_size);
-        std::cout << "Среднее последовательности №"<< i <<" : " << average_value(arr,arr_size) << std::endl;
+
+        std::cout << "Среднее последовательности №"<< i <<" : " << calculate_average(arr,arr_size) << std::endl;
         std::cout << std::endl;
     }
 }
 
-float average_value (int *arr, const int &arr_size){
+float calculate_average (const int * const arr,const int arr_size){
     float sum = 0;
     for(int i = 0; i < arr_size; i++) {
         sum += arr[i];
@@ -32,13 +35,13 @@ float average_value (int *arr, const int &arr_size){
     return sum/arr_size;
 }
 
-void generate_array (int *arr,const int &arr_size) {
+void generate_array (int* const arr, const int arr_size){
     for(int i = 0; i < arr_size; i++) {
         arr[i] = random() % 20;
     }
 }
 
-void print_array (int *arr,const int &arr_size) {
+void print_array (const int * const arr, const int arr_size){
     const char format = ' ';
     for(int i = 0; i < arr_size; i++) {
         std::cout << arr[i] << format;
